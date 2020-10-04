@@ -5,8 +5,10 @@ const selectShop = (state) => state.shop;
 export const selectColletions = createSelector([selectShop], (shop) => shop.collections);
 
 export const selectColletionsForPreview = createSelector([selectColletions], (collections) =>
-	Object.keys(collections).map((key) => collections[key])
+	collections ? Object.keys(collections).map((key) => collections[key]) : []
 );
 
 export const selectCollection = (collectionUrlParam) =>
-	createSelector([selectColletions], (collections) => collections[collectionUrlParam]);
+	createSelector([selectColletions], (collections) =>
+		collections ? collections[collectionUrlParam] : null
+	);
