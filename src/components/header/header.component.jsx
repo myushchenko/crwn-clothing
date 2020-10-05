@@ -8,7 +8,7 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import CartDropdownContainer from '../cart-dropdown/cart-dropdown.container';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
@@ -30,7 +30,7 @@ const Header = ({ currentUser, cartDropdownHidden }) => (
 			)}
 			<CartIcon />
 		</OptionsContainer>
-		{cartDropdownHidden ? null : <CartDropdown />}
+		{cartDropdownHidden ? null : <CartDropdownContainer />}
 	</HeaderContainer>
 );
 
