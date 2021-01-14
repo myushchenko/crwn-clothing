@@ -33,6 +33,11 @@ export default (state = initialState, { type, payload }) => {
 				...state,
 				cartItems: []
 			};
+		case CartActionTypes.SET_CART_FROM_FIREBASE:
+			return {
+				...state,
+				cartItems: payload
+			};
 		default:
 			return state;
 	}
